@@ -1,7 +1,7 @@
 /*
 	Name: Elizabeth Brooks
-	Date: April 14, 2016
-	File: CS470_Lab1_BrooksE
+	Date Modified: April 21, 2016
+	File: MiniShell
 */
 //Imports
 #include <cstdio>
@@ -26,7 +26,7 @@ vector<string> split(const string &sIn, char del) {
     }
     //Return the tokenized string
     return tokenizedS;
-}
+} //End split
 //The main method, where the program begins
 int main(int argc, char* argv[])
 {
@@ -49,11 +49,10 @@ int main(int argc, char* argv[])
             {
             	//Reurn result of operation
                 return std::stoi(tokens[1]);
-            }
+            } //End inner if
             //Reurn result of operation
             return resultArgs;
-        }
-        if(tokens[0].compare("mkdir")==0) //2. mkdir command operation
+        } else if(tokens[0].compare("mkdir")==0) //2. mkdir command operation
         {
             if(tokens.size() >1)
             {
@@ -61,24 +60,22 @@ int main(int argc, char* argv[])
                 {
                     tempString.append(tokens.at(i));
                     tempString.append(" ");
-                }
+                } //End inner for
                 //Reurn result of operation
                 resultArgs = mkdir(tempString.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-            }
+            } //End outer for
             //Reurn result of operation
             resultArgs = mkdir("./Default",S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-        }
-        if(tokens[0].compare("cmp")==0) //4. cmp command operation
+        } else if(tokens[0].compare("cmp")==0) //4. cmp command operation
         {
         	//Reurn result of operation
             resultArgs = system(std::string("cmp " + tokens[1] + " " + tokens[2]).c_str());
-        }
-        if(tokens[0].compare("ls")==0) //3. ls command operation
+        } else if(tokens[0].compare("ls")==0) //3. ls command operation
         {
         	//Reurn result of operation
             resultArgs = system("ls");
-        }
-	}
+        } //End else, if
+	} //End while
 	//Program complete, exit return
 	return 0;
-}
+} //End main
