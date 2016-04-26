@@ -47,10 +47,10 @@ int main(int argc, char* argv[])
         {
             if(tokens.size() == 2)
             {
-            	//Reurn result of operation
+            	//Return result of operation
                 return std::stoi(tokens[1]);
             } //End inner if
-            //Reurn result of operation
+            //Result of operation
             return resultArgs;
         } else if(tokens[0].compare("mkdir")==0) //2. mkdir command operation
         {
@@ -61,20 +61,23 @@ int main(int argc, char* argv[])
                     tempString.append(tokens.at(i));
                     tempString.append(" ");
                 } //End inner for
-                //Reurn result of operation
+                //Result of operation
                 resultArgs = mkdir(tempString.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
             } //End outer for
-            //Reurn result of operation
+            //Result of operation
             resultArgs = mkdir("./Default",S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
         } else if(tokens[0].compare("cmp")==0) //4. cmp command operation
         {
-        	//Reurn result of operation
+        	//Result of operation
             resultArgs = system(std::string("cmp " + tokens[1] + " " + tokens[2]).c_str());
         } else if(tokens[0].compare("ls")==0) //3. ls command operation
         {
-        	//Reurn result of operation
+        	//Result of operation
             resultArgs = system("ls");
-        } //End else, if
+        } else 
+        {
+        	
+        }//End else, if
 	} //End while
 	//Program complete, exit return
 	return 0;
