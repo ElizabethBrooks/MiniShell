@@ -1,7 +1,7 @@
 /*
 	Name: Elizabeth Brooks
 	Date Modified: April 28, 2016
-	File: MiniShell
+	File: CS470 Lab1
 */
 //Imports
 #include <cstdio>
@@ -11,21 +11,17 @@
 #include <sys/types.h>
 #include <vector>
 #include <sstream>
-//Namespace for inputs/outputs
+//Namespace declaration
 using namespace std;
 //Function for tokenizing the user input arguments
 vector<string> split(const string &sIn, char del) {
 	//Declare variables for tokenization
     stringstream subS(sIn); //Set string to be tokenized
-    //Prepare substring
+    //Prepare substrings
     string ss;
     vector<string> tokenizedS;
-    //Loop through the string for sub strings
-    while (getline(subS, ss, del)) {
-        tokenizedS.push_back(ss);
-    } //End while
-    //Return the tokenized string
-    return tokenizedS;
+    while (getline(subS, ss, del)) tokenizedS.push_back(ss); //Loop through the string for sub strings
+    return tokenizedS; //Return the tokenized string
 } //End split
 //The main method, where the program begins
 int main(int argc, char* argv[]) {
