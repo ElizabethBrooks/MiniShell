@@ -14,5 +14,5 @@ parameter (dir) is provided, the directory with the given name (dir) will be con
 4. cmp <filename1> <filename2> compares two files and returns the first byte where a difference occurs, if any.
 
 ##To compile:
-$ gcc -o test MiniShell.cpp
-$ ./test
+1. $ gcc -o test MiniShell.cpp
+2. $ ./test
