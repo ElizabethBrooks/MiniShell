@@ -51,8 +51,7 @@ int main(int argc, char* argv[]) {
                 } //End inner for
                 resultArgs = mkdir(tempString.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH); //Result of operation
             } //End outer for
-            //Result of operation
-            resultArgs = mkdir("./Default",S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+            resultArgs = mkdir("./Default",S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH); //Result of operation
         } else if(tokens[0].compare("cmp") == 0) //4. cmp command operation
             resultArgs = system(std::string("cmp " + tokens[1] + " " + tokens[2]).c_str()); //Result of operation
         } else if(tokens[0].compare("ls") == 0) { //3. ls command operation
