@@ -28,8 +28,7 @@ vector<string> split(const string &sIn, char del) {
     return tokenizedS;
 } //End split
 //The main method, where the program begins
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
 	//Declare variables for use in the shell program
 	bool runShell = true; //Start true and loop until false
 	string inputArgs; //User input
@@ -42,12 +41,10 @@ int main(int argc, char* argv[])
 		tokens= split(inputArgs,' '); 
 		//Perform the function (arg) entered by the user
 		if(tokens[0].compare("exit") == 0) { //1. exit command operation
-            if(tokens.size() == 2) {
-                return std::stoi(tokens[1]); //Return result of operation
-            } //End inner if
-            return resultArgs; //Return result of operation
+            if(tokens.size() == 2) return std::stoi(tokens[1]); //Return result of operation
+            return resultArgs; //Return result of operation and exit program
         } else if(tokens[0].compare("mkdir") == 0) { //2. mkdir command operation
-            if(tokens.size() >1) {
+            if(tokens.size() > 1) { //Determine if input is delimited
                 for(int i=1; i<tokens.size(); i++) {
                     tempString.append(tokens.at(i));
                     tempString.append(" ");
