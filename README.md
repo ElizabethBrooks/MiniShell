@@ -1,9 +1,5 @@
-Name: Elizabeth Brooks
-Date Modified: April 28, 2016
-File: CS470 Lab1
-
-# MiniShell
-###Mini shell for performing basic terminal functions.
+#MiniShell
+Mini shell for performing basic terminal functions.
 
 ##The shell has the following features:
 1. exit [n] terminates the shell program.
@@ -15,3 +11,7 @@ parameter (dir) is provided, the directory with the given name (dir) will be con
 ##To compile:
 1. $ gcc -o test MiniShell.cpp
 2. $ ./test
+
+####Name: Elizabeth Brooks
+####Date Modified: April 28, 2016
+####File: CS470 Lab1
